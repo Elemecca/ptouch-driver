@@ -24,3 +24,8 @@ Makefile
 # build output
 /rastertoptch
 *.o
+
+# Debian build output
+/debian/debhelper-build-stamp
+/debian/files
+/debian/printer-driver-ptouch*

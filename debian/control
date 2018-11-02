@@ -1,0 +1,15 @@
+Source: printer-driver-ptouch
+Section: text
+Priority: optional
+Maintainer: Sam Hanes <sam@maltera.com>
+Build-Depends: debhelper (>=9),autotools-dev
+Standards-Version: 3.9.7
+Homepage: https://github.com/elemecca/ptouch-driver
+Vcs-Git: git://github.com/elemecca/ptouch-driver.git
+
+Package: printer-driver-ptouch
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: foomatic-db-engine, cups-filters (>= 1.0.42) | foomatic-filters (>= 4.0), ghostscript, cups
+Description: driver for Brother P-touch label printers
+ A CUPS/Foomatic driver for the Brother P-touch line of label printers.
