@@ -46,6 +46,7 @@ nobase_dist_foomaticdb_DATA	= driver/ptouch.xml \
 				  printer/Brother-PT-9400.xml \
 				  printer/Brother-PT-9500PC.xml \
 				  printer/Brother-PT-9600.xml \
+				  printer/Brother-PT-P700.xml \
 				  opt/Brother-Ptouch-AdvanceDistance.xml \
 				  opt/Brother-Ptouch-AdvanceMedia.xml \
 				  opt/Brother-Ptouch-Align.xml \

@@ -114,6 +114,9 @@ USA
   <printer>
    <id>printer/Brother-PT-9600</id><!-- Brother P-touch PT-9600 -->
   </printer>
+  <printer>
+   <id>printer/Brother-PT-P700</id><!-- Brother P-touch PT-P700 -->
+  </printer>
  </printers>
 </driver>
 

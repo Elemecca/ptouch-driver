@@ -1,0 +1,55 @@
+<!--
+Copyright (c) 2018 Sam Hanes <sam@maltera.com>
+
+This file is part of ptouch-driver.
+
+ptouch-driver is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or (at
+your option) any later version.
+
+ptouch-driver is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with ptouch-driver; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301
+USA
+-->
+<printer id="printer/Brother-PT-P700">
+  <make>Brother</make>
+  <model>PT-P700</model>
+  <pcmodel>BR9600</pcmodel>
+  <mechanism>
+    <sublimation/>
+    <!--not "color"-->
+    <resolution>
+      <dpi>
+        <x>180</x>
+        <y>180</y>
+      </dpi>
+    </resolution>
+    <consumables>
+      <comments><en>Brother TZe series tape cartridges</en></comments>
+    </consumables>
+  </mechanism>
+  <url>https://www.brother-usa.com/products/PTP700</url>
+  <lang>
+    <proprietary />
+  </lang>
+  <autodetect>
+    <general>
+      <ieee1284>MFG:Brother;CMD:PT-CBP;MDL:PT-P700;CLS:PRINTER;</ieee1284>
+      <commandset>PT-CBP</commandset>
+      <description>Brother PT-P700</description>
+      <manufacturer>Brother</manufacturer>
+      <model>PT-P700</model>
+    </general>
+  </autodetect>
+  <functionality>B</functionality>
+  <driver>ptouch</driver>
+  <!--no "contrib_url"-->
+  <!--no "comments"-->
+</printer>
