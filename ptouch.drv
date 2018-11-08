@@ -1,0 +1,43 @@
+#include <font.defs>
+#include <media.defs>
+
+Font *
+
+Manufacturer "Brother"
+ModelName "PT-P700"
+Version 1.4
+
+Filter application/vnd.cups-raster 100 rastertoptch
+
+*Resolution k 1 0 0 0 180dpi
+
+#media "24mm" 24mm 100mm
+*MediaSize 24mm
+
+
+Group General
+
+  Option "PageSize/Media" PickOne AnySetup 100
+   *Choice "24mm/24mm TZe Tape (18.1mm imageable, 128px)"
+      "<</PageSize[68 283]/ImagingBBox null/MediaType (roll)>>setpagedevice"
+    Choice "18mm/18mm TZe Tape (15.8mm imageable, 112px)"
+      "<</PageSize[51 283]/ImagingBBox null/MediaType (roll)>>setpagedevice"
+    Choice "12mm/12mm TZe Tape (9.9mm imageable, 70px)"
+      "<</PageSize[34 283]/ImagingBBox null/MediaType (roll)>>setpagedevice"
+    Choice "9mm/9mm TZe Tape (7.1mm imageable, 50px)"
+      "<</PageSize[26 283]/ImagingBBox null/MediaType (roll)>>setpagedevice"
+    Choice "6mm/6mm TZe Tape(4.5mm imageable, 32px)"
+      "<</PageSize[17 283]/ImagingBBox null/MediaType (roll)>>setpagedevice"
+    Choice "3.5mm/3.5mm TZe Tape (3.4mm imageable, 24px)"
+      "<</PageSize[10 283]/ImagingBBox null/MediaType (roll)>>setpagedevice"
+
+Group Finishing
+
+  Option "CutMedia/Auto Cut" PickOne AnySetup 110
+    Choice "Both/Cut before and after each label" "<</CutMedia 6>>setpagedevice"
+   *Choice "LabelEnd/Cut after each label" "<</CutMedia 4>>setpagedevice"
+    Choice "JobEnd/Cut at end of job"      "<</CutMedia 2>>setpagedevice"
+    Choice "Off/Do not cut the medium"     "<</CutMedia 0>>setpagedevice"
+
+PCFileName "why.ppd"
+FileName "Brother PT-P700.ppd"
