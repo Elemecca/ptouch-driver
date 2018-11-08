@@ -1,43 +1,74 @@
-#include <font.defs>
-#include <media.defs>
+Copyright
+"Copyright 2018 Sam Hanes <sam@maltera.com>
 
-Font *
+This file is part of ptouch-driver.
+
+ptouch-driver is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+ptouch-driver is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with ptouch-driver; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+MA 02110-1301, USA.
+"
 
 Manufacturer "Brother"
-ModelName "PT-P700"
+// ModelName is in the model sections at the end
 Version 1.4
 
+
+#include <font.defs>
+Font *
+
+
+DriverType custom
 Filter application/vnd.cups-raster 100 rastertoptch
+
 
 *Resolution k 1 0 0 0 180dpi
 
-#media "24mm" 24mm 100mm
-*MediaSize 24mm
 
+#media "TZe24/24mm TZe Tape (18.1mm imageable, 128px)"  24.0mm 100mm
+#media "TZe18/18mm TZe Tape (15.8mm imageable, 112px)"  18.1mm 100mm
+#media "TZe12/12mm TZe Tape (9.9mm imageable, 70px)"    11.9mm 100mm
+#media "TZe9/9mm TZe Tape (7.1mm imageable, 50px)"       9.0mm 100mm
+#media "TZe6/6mm TZe Tape (4.5mm imageable, 32px)"       5.9mm 100mm
+#media "TZe3.5/3.5mm TZe Tape (3.4mm imageable, 24px)"   3.4mm 100mm
 
-Group General
+HWMargins 2mm 2.96mm 2mm 2.96mm
+*MediaSize TZe24
 
-  Option "PageSize/Media" PickOne AnySetup 100
-   *Choice "24mm/24mm TZe Tape (18.1mm imageable, 128px)"
-      "<</PageSize[68 283]/ImagingBBox null/MediaType (roll)>>setpagedevice"
-    Choice "18mm/18mm TZe Tape (15.8mm imageable, 112px)"
-      "<</PageSize[51 283]/ImagingBBox null/MediaType (roll)>>setpagedevice"
-    Choice "12mm/12mm TZe Tape (9.9mm imageable, 70px)"
-      "<</PageSize[34 283]/ImagingBBox null/MediaType (roll)>>setpagedevice"
-    Choice "9mm/9mm TZe Tape (7.1mm imageable, 50px)"
-      "<</PageSize[26 283]/ImagingBBox null/MediaType (roll)>>setpagedevice"
-    Choice "6mm/6mm TZe Tape(4.5mm imageable, 32px)"
-      "<</PageSize[17 283]/ImagingBBox null/MediaType (roll)>>setpagedevice"
-    Choice "3.5mm/3.5mm TZe Tape (3.4mm imageable, 24px)"
-      "<</PageSize[10 283]/ImagingBBox null/MediaType (roll)>>setpagedevice"
+HWMargins 2mm 1.12mm 2mm 1.12mm
+MediaSize TZe18
+
+HWMargins 2mm 0.98mm 2mm 0.98mm
+MediaSize TZe12
+MediaSize TZe9
+
+HWMargins 2mm 0.7mm 2mm 0.7mm
+MediaSize TZe6
+
+HWMargins 2mm 0 2mm 0
+MediaSize TZe3.5
+
 
 Group Finishing
 
   Option "CutMedia/Auto Cut" PickOne AnySetup 110
-    Choice "Both/Cut before and after each label" "<</CutMedia 6>>setpagedevice"
    *Choice "LabelEnd/Cut after each label" "<</CutMedia 4>>setpagedevice"
     Choice "JobEnd/Cut at end of job"      "<</CutMedia 2>>setpagedevice"
     Choice "Off/Do not cut the medium"     "<</CutMedia 0>>setpagedevice"
 
-PCFileName "why.ppd"
-FileName "Brother PT-P700.ppd"
+
+{
+    ModelName "PT-P700"
+    PCFileName "ptp700.ppd"
+    FileName "Brother_PT-P700.ppd"
+}
